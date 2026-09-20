@@ -23,10 +23,10 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar, student }) => {
         <div className="flex items-center gap-3">
           <button
             onClick={onToggleSidebar}
-            className="p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)]"
-            aria-label="Open Navigation Drawer"
+            className="p-3 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)]"
+            aria-label="Open Navigation Menu"
           >
-            <Menu className="w-5 h-5" />
+            <Menu className="w-6 h-6" />
           </button>
 
           <div className="flex items-center gap-2.5">
@@ -38,11 +38,11 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar, student }) => {
                 <span className="font-extrabold text-lg tracking-tight text-[var(--text-primary)]">
                   {t('portalTitle')}
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                <span className="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
                   {t('studentPortal')}
                 </span>
               </div>
-              <p className="text-xs text-[var(--text-muted)] hidden sm:block">
+              <p className="text-sm text-[var(--text-muted)] hidden sm:block">
                 {t('schoolName')}
               </p>
             </div>
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar, student }) => {
             <button
               onClick={toggleArrivalState}
               title="Click to simulate Ward Arrival status toggle"
-              className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+              className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${
                 arrivalStatus.isArrived
                   ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20'
                   : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 hover:bg-amber-500/20'
@@ -75,31 +75,40 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar, student }) => {
             </button>
           )}
 
-          {/* Language Selector Dropdown */}
-          <div className="relative flex items-center bg-[var(--bg-main)] border border-[var(--border-color)] rounded-xl px-2 py-1 gap-1">
-            <Globe className="w-4 h-4 text-sky-500 shrink-0" />
-            <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value as Language)}
-              className="bg-transparent text-xs font-semibold text-[var(--text-primary)] focus:outline-none cursor-pointer pr-1"
-              aria-label="Select Language"
-            >
-              <option value="en" className="bg-[var(--bg-card)] text-[var(--text-primary)]">English</option>
-              <option value="hi" className="bg-[var(--bg-card)] text-[var(--text-primary)]">हिंदी</option>
-              <option value="ta" className="bg-[var(--bg-card)] text-[var(--text-primary)]">தமிழ்</option>
-            </select>
+          {/* Language Selector - big tappable buttons instead of a tiny dropdown */}
+          <div className="flex items-center bg-[var(--bg-main)] border border-[var(--border-color)] rounded-xl p-1 gap-0.5">
+            <Globe className="w-4 h-4 text-sky-500 shrink-0 ml-1.5 hidden sm:block" />
+            {([
+              { code: 'en', label: 'EN' },
+              { code: 'hi', label: 'हिं' },
+              { code: 'ta', label: 'த' }
+            ] as { code: Language; label: string }[]).map((opt) => (
+              <button
+                key={opt.code}
+                onClick={() => setLanguage(opt.code)}
+                aria-label={`Switch to ${opt.label}`}
+                aria-pressed={language === opt.code}
+                className={`px-3 py-2 rounded-lg text-sm font-bold transition-all min-w-[2.75rem] ${
+                  language === opt.code
+                    ? 'bg-sky-500 text-white shadow-sm'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)]'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
           </div>
 
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] border border-transparent hover:border-[var(--border-color)] transition-all"
+            className="p-3 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] border border-transparent hover:border-[var(--border-color)] transition-all"
             aria-label={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} mode`}
           >
             {theme === 'dark' ? (
-              <Sun className="w-5 h-5 text-amber-400" />
+              <Sun className="w-6 h-6 text-amber-400" />
             ) : (
-              <Moon className="w-5 h-5 text-slate-700" />
+              <Moon className="w-6 h-6 text-slate-700" />
             )}
           </button>
 
@@ -109,10 +118,10 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar, student }) => {
               <User className="w-4 h-4" />
             </div>
             <div className="hidden md:block text-left">
-              <div className="text-xs font-semibold text-[var(--text-primary)] leading-tight">
+              <div className="text-sm font-semibold text-[var(--text-primary)] leading-tight">
                 {student?.name || 'Student'}
               </div>
-              <div className="text-[10px] text-[var(--text-muted)]">
+              <div className="text-xs text-[var(--text-muted)]">
                 {student?.className} ({student?.section})
               </div>
             </div>

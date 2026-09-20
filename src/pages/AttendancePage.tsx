@@ -84,13 +84,13 @@ export const AttendancePage: React.FC = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>{t('backToDashboard')}</span>
         </button>
 
-        <span className="text-xs text-[var(--text-muted)]">
+        <span className="text-sm text-[var(--text-muted)]">
           Last Updated: {attendance.lastUpdated}
         </span>
       </div>
@@ -105,7 +105,7 @@ export const AttendancePage: React.FC = () => {
               <h1 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] tracking-tight">
                 {t('attendanceRecordTitle')}
               </h1>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-0.5">
                 {t('classSection')} • {t('academicSession')}
               </p>
             </div>
@@ -114,10 +114,10 @@ export const AttendancePage: React.FC = () => {
           <div className="flex items-center gap-2 bg-[var(--bg-card)] px-4 py-2 rounded-xl border border-[var(--border-color)]">
             <Award className="w-5 h-5 text-emerald-500" />
             <div>
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">
                 {t('attendance')}
               </div>
-              <div className="text-sm font-extrabold text-emerald-600 dark:text-emerald-400">
+              <div className="text-base font-extrabold text-emerald-600 dark:text-emerald-400">
                 {t('attendanceCompliant')}
               </div>
             </div>
@@ -130,13 +130,13 @@ export const AttendancePage: React.FC = () => {
         {/* Metric 1 */}
         <div className="card-base p-5 flex items-center justify-between">
           <div>
-            <div className="text-xs font-semibold text-[var(--text-muted)]">
+            <div className="text-sm font-semibold text-[var(--text-muted)]">
               Overall Percentage
             </div>
             <div className="text-3xl font-black text-[var(--text-primary)] mt-1">
               {attendance.attendancePercentage}%
             </div>
-            <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
+            <div className="text-sm text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
               Above Minimum Threshold (75%)
             </div>
           </div>
@@ -148,13 +148,13 @@ export const AttendancePage: React.FC = () => {
         {/* Metric 2 */}
         <div className="card-base p-5 flex items-center justify-between">
           <div>
-            <div className="text-xs font-semibold text-[var(--text-muted)]">
+            <div className="text-sm font-semibold text-[var(--text-muted)]">
               Classes Attended
             </div>
             <div className="text-3xl font-black text-[var(--text-primary)] mt-1">
-              {attendance.classesAttended} <span className="text-sm font-normal text-[var(--text-muted)]">/ {attendance.totalClasses}</span>
+              {attendance.classesAttended} <span className="text-base font-normal text-[var(--text-muted)]">/ {attendance.totalClasses}</span>
             </div>
-            <div className="text-[11px] text-[var(--text-secondary)] font-medium mt-1">
+            <div className="text-sm text-[var(--text-secondary)] font-medium mt-1">
               Total Recorded Classes
             </div>
           </div>
@@ -166,13 +166,13 @@ export const AttendancePage: React.FC = () => {
         {/* Metric 3 */}
         <div className="card-base p-5 flex items-center justify-between">
           <div>
-            <div className="text-xs font-semibold text-[var(--text-muted)]">
+            <div className="text-sm font-semibold text-[var(--text-muted)]">
               Current Streak
             </div>
             <div className="text-3xl font-black text-amber-500 mt-1">
               {attendance.streakDays} Days
             </div>
-            <div className="text-[11px] text-[var(--text-secondary)] font-medium mt-1">
+            <div className="text-sm text-[var(--text-secondary)] font-medium mt-1">
               Consecutive Attendance
             </div>
           </div>
@@ -184,13 +184,13 @@ export const AttendancePage: React.FC = () => {
         {/* Metric 4 */}
         <div className="card-base p-5 flex items-center justify-between">
           <div>
-            <div className="text-xs font-semibold text-[var(--text-muted)]">
+            <div className="text-sm font-semibold text-[var(--text-muted)]">
               Absentee Days
             </div>
             <div className="text-3xl font-black text-rose-500 mt-1">
               {attendance.totalClasses - attendance.classesAttended} Days
             </div>
-            <div className="text-[11px] text-rose-500 font-semibold mt-1">
+            <div className="text-sm text-rose-500 font-semibold mt-1">
               Medical & Sick Leave
             </div>
           </div>
@@ -209,7 +209,7 @@ export const AttendancePage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {attendance.monthlyAttendance.map((m, idx) => (
             <div key={idx} className="p-4 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-xs font-bold text-[var(--text-secondary)]">{m.month}</div>
+              <div className="text-sm font-bold text-[var(--text-secondary)]">{m.month}</div>
               <div className="text-xl font-black text-[var(--text-primary)] mt-1">
                 {m.percentage}%
               </div>
@@ -219,7 +219,7 @@ export const AttendancePage: React.FC = () => {
                   style={{ width: `${m.percentage}%` }}
                 />
               </div>
-              <div className="text-[10px] text-[var(--text-muted)] mt-2 font-medium">
+              <div className="text-xs text-[var(--text-muted)] mt-2 font-medium">
                 {m.attended} / {m.total} Attended
               </div>
             </div>
@@ -234,21 +234,21 @@ export const AttendancePage: React.FC = () => {
             <h2 className="text-base font-bold text-[var(--text-primary)]">
               August 2026 Daily Attendance Log
             </h2>
-            <p className="text-xs text-[var(--text-muted)]">
+            <p className="text-sm text-[var(--text-muted)]">
               Date-wise attendance verification
             </p>
           </div>
 
           {/* Filter Buttons */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-xs text-[var(--text-muted)] flex items-center gap-1 mr-1">
+            <span className="text-sm text-[var(--text-muted)] flex items-center gap-1 mr-1">
               <Filter className="w-3 h-3" /> Filter:
             </span>
             {['all', 'present', 'absent', 'holiday', 'weekend'].map((st) => (
               <button
                 key={st}
                 onClick={() => setStatusFilter(st)}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all ${
+                className={`px-4 py-2.5 rounded-lg text-sm font-semibold uppercase tracking-wider transition-all ${
                   statusFilter === st
                     ? 'bg-sky-500 text-white shadow-sm'
                     : 'bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)]'
@@ -272,15 +272,15 @@ export const AttendancePage: React.FC = () => {
                 className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)] flex items-center justify-between"
               >
                 <div>
-                  <div className="text-xs font-bold text-[var(--text-primary)]">
+                  <div className="text-sm font-bold text-[var(--text-primary)]">
                     {log.date}
                   </div>
-                  <div className="text-[11px] text-[var(--text-muted)] mt-0.5 truncate max-w-[140px]">
+                  <div className="text-sm text-[var(--text-muted)] mt-0.5 truncate max-w-[140px]">
                     {log.remarks}
                   </div>
                 </div>
 
-                <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold border flex items-center gap-1 ${badge.bg}`}>
+                <span className={`px-2.5 py-1 rounded-lg text-xs font-bold border flex items-center gap-1 ${badge.bg}`}>
                   <BadgeIcon className="w-3 h-3" />
                   {badge.label}
                 </span>

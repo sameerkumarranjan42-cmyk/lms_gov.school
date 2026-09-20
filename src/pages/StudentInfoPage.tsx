@@ -43,13 +43,13 @@ export const StudentInfoPage: React.FC = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>{t('backToDashboard')}</span>
         </button>
 
-        <span className="text-xs text-[var(--text-muted)]">
+        <span className="text-sm text-[var(--text-muted)]">
           {t('admissionNo')}: {student.admissionNo}
         </span>
       </div>
@@ -67,7 +67,7 @@ export const StudentInfoPage: React.FC = () => {
                   {t('studentProfileTitle')}
                 </h1>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-0.5">
                 {t('personalGuardianDetails')}
               </p>
             </div>
@@ -92,19 +92,19 @@ export const StudentInfoPage: React.FC = () => {
             <h2 className="text-xl font-black text-[var(--text-primary)]">
               {student.name}
             </h2>
-            <p className="text-xs font-semibold text-sky-500 mt-0.5">
+            <p className="text-sm font-semibold text-sky-500 mt-0.5">
               {student.className} • {student.section}
             </p>
           </div>
 
-          <div className="w-full pt-4 border-t border-[var(--border-color)] grid grid-cols-2 gap-2 text-center text-xs">
+          <div className="w-full pt-4 border-t border-[var(--border-color)] grid grid-cols-2 gap-2 text-center text-sm">
             <div className="p-2.5 rounded-xl bg-[var(--bg-main)]">
-              <div className="text-[10px] text-[var(--text-muted)] font-semibold uppercase">Roll Number</div>
+              <div className="text-xs text-[var(--text-muted)] font-semibold uppercase">Roll Number</div>
               <div className="text-base font-extrabold text-[var(--text-primary)] mt-0.5">{student.rollNo}</div>
             </div>
             <div className="p-2.5 rounded-xl bg-[var(--bg-main)]">
-              <div className="text-[10px] text-[var(--text-muted)] font-semibold uppercase">Academic Year</div>
-              <div className="text-xs font-extrabold text-[var(--text-primary)] mt-1">{student.academicYear}</div>
+              <div className="text-xs text-[var(--text-muted)] font-semibold uppercase">Academic Year</div>
+              <div className="text-sm font-extrabold text-[var(--text-primary)] mt-1">{student.academicYear}</div>
             </div>
           </div>
         </div>
@@ -118,36 +118,36 @@ export const StudentInfoPage: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">Full Name</div>
-              <div className="text-sm font-bold text-[var(--text-primary)] mt-0.5">{student.name}</div>
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">Full Name</div>
+              <div className="text-base font-bold text-[var(--text-primary)] mt-0.5">{student.name}</div>
             </div>
 
             <div className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">Admission Number</div>
-              <div className="text-sm font-bold text-[var(--text-primary)] mt-0.5">{student.admissionNo}</div>
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">Admission Number</div>
+              <div className="text-base font-bold text-[var(--text-primary)] mt-0.5">{student.admissionNo}</div>
             </div>
 
             <div className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">Class & Section</div>
-              <div className="text-sm font-bold text-[var(--text-primary)] mt-0.5">{student.className} ({student.section})</div>
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">Class & Section</div>
+              <div className="text-base font-bold text-[var(--text-primary)] mt-0.5">{student.className} ({student.section})</div>
             </div>
 
             <div className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">Guardian Name</div>
-              <div className="text-sm font-bold text-[var(--text-primary)] mt-0.5">{student.guardianName}</div>
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">Guardian Name</div>
+              <div className="text-base font-bold text-[var(--text-primary)] mt-0.5">{student.guardianName}</div>
             </div>
 
             <div className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">Guardian Contact</div>
-              <div className="text-sm font-bold text-[var(--text-primary)] mt-0.5 flex items-center gap-1.5">
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">Guardian Contact</div>
+              <div className="text-base font-bold text-[var(--text-primary)] mt-0.5 flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-emerald-500" />
                 {student.guardianPhone}
               </div>
             </div>
 
             <div className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)]">
-              <div className="text-[10px] uppercase font-bold text-[var(--text-muted)]">School & District</div>
-              <div className="text-sm font-bold text-[var(--text-primary)] mt-0.5 flex items-center gap-1.5 truncate">
+              <div className="text-xs uppercase font-bold text-[var(--text-muted)]">School & District</div>
+              <div className="text-base font-bold text-[var(--text-primary)] mt-0.5 flex items-center gap-1.5 truncate">
                 <Building2 className="w-3.5 h-3.5 text-blue-500" />
                 {student.schoolName}
               </div>
@@ -158,16 +158,16 @@ export const StudentInfoPage: React.FC = () => {
 
       {/* Future LMS Expansion Placeholder Section */}
       <div className="card-base p-6 bg-[var(--bg-main)] border-dashed border-2 border-[var(--border-color)] space-y-3">
-        <div className="flex items-center gap-2 text-xs font-bold text-blue-500 uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-sm font-bold text-blue-500 uppercase tracking-wider">
           <Layers className="w-4 h-4" />
           <span>Future LMS Expansion Architecture</span>
         </div>
 
-        <h3 className="text-sm font-bold text-[var(--text-primary)]">
+        <h3 className="text-base font-bold text-[var(--text-primary)]">
           Student Info Submodules Ready For Expansion
         </h3>
 
-        <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
           The internal hierarchy of this module (such as student medical records, extracurricular achievement certificates, document repository, and transport slips) will be defined in subsequent project phases. The navigation drawer and page routing are structured to seamlessly connect new sub-routes.
         </p>
       </div>

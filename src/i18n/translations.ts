@@ -19,6 +19,9 @@ export interface TranslationKeys {
   namaste: string;
   rollNo: string;
   classSection: string;
+  more: string;
+  homeShort: string;
+  routineShort: string;
 
   // Ward Arrival
   wardArrivalTitle: string;
@@ -146,6 +149,9 @@ export const translations: Record<Language, TranslationKeys> = {
     namaste: 'Namaste',
     rollNo: 'Roll No',
     classSection: 'Class 8 (Section A)',
+    more: 'More',
+    homeShort: 'Home',
+    routineShort: 'Routine',
 
     wardArrivalTitle: 'Ward Arrival Notification',
     wardArrivedMsg: 'Your ward has arrived at school safely.',
@@ -261,6 +267,9 @@ export const translations: Record<Language, TranslationKeys> = {
     namaste: 'नमस्ते',
     rollNo: 'अनुक्रमांक',
     classSection: 'कक्षा 8 (वर्ग अ)',
+    more: 'और',
+    homeShort: 'मुख्य',
+    routineShort: 'समय सारिणी',
 
     wardArrivalTitle: 'छात्र आगमन सूचना',
     wardArrivedMsg: 'आपका छात्र सुरक्षित विद्यालय पहुंच चुका है।',
@@ -376,6 +385,9 @@ export const translations: Record<Language, TranslationKeys> = {
     namaste: 'வணக்கம்',
     rollNo: 'வரிசை எண்',
     classSection: 'வகுப்பு 8 (பிரிவு அ)',
+    more: 'மேலும்',
+    homeShort: 'முகப்பு',
+    routineShort: 'அட்டவணை',
 
     wardArrivalTitle: 'மாணவர் வருகை அறிவிப்பு',
     wardArrivedMsg: 'உங்கள் மாணவர் பள்ளிக்கு பாதுகாப்பாக வந்து சேர்ந்துள்ளார்.',

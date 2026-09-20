@@ -41,7 +41,7 @@ export const WardArrivalWidget: React.FC = () => {
               <h3 className="font-bold text-base text-[var(--text-primary)]">
                 {t('wardArrivalTitle')}
               </h3>
-              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider ${
+              <span className={`text-xs font-bold px-2 py-0.5 rounded-md uppercase tracking-wider ${
                 arrivalStatus.isArrived
                   ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
                   : 'bg-amber-500/15 text-amber-700 dark:text-amber-300'
@@ -50,11 +50,11 @@ export const WardArrivalWidget: React.FC = () => {
               </span>
             </div>
 
-            <p className="text-sm font-medium text-[var(--text-primary)] mt-1">
+            <p className="text-base font-medium text-[var(--text-primary)] mt-1">
               {arrivalStatus.isArrived ? t('wardArrivedMsg') : t('wardNotArrivedMsg')}
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[var(--text-secondary)] mt-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--text-secondary)] mt-2">
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-sky-500" />
                 {t('arrivedAt')}: <strong>{arrivalStatus.arrivalTime}</strong> ({arrivalStatus.date})
@@ -70,7 +70,7 @@ export const WardArrivalWidget: React.FC = () => {
         {/* Right Side Simulation Action */}
         <button
           onClick={toggleArrivalState}
-          className="self-start sm:self-center flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)] hover:border-sky-500 transition-all shrink-0 active:scale-95"
+          className="self-start sm:self-center flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)] hover:border-sky-500 transition-all shrink-0 active:scale-95"
           title="Simulate arrival status change for prototype review"
         >
           <RefreshCw className="w-3.5 h-3.5 text-sky-500" />

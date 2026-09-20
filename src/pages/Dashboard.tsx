@@ -100,7 +100,7 @@ export const Dashboard: React.FC = () => {
       <div className="card-base p-6 bg-gradient-to-r from-sky-500/10 via-emerald-500/5 to-transparent relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider mb-1">
+            <div className="flex items-center gap-2 text-sm font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider mb-1">
               <Sparkles className="w-3.5 h-3.5" />
               <span>{t('welcomeBack')}</span>
             </div>
@@ -109,7 +109,7 @@ export const Dashboard: React.FC = () => {
             </h1>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs bg-[var(--bg-card)]/80 backdrop-blur-xs p-3 rounded-xl border border-[var(--border-color)]">
+          <div className="flex flex-wrap items-center gap-2 text-sm bg-[var(--bg-card)]/80 backdrop-blur-xs p-3 rounded-xl border border-[var(--border-color)]">
             <span className="flex items-center gap-1 font-semibold text-[var(--text-primary)]">
               <BookOpenCheck className="w-4 h-4 text-sky-500" />
               {student?.className} ({student?.section})
@@ -148,7 +148,7 @@ export const Dashboard: React.FC = () => {
           <h2 className="text-lg font-bold text-[var(--text-primary)] tracking-tight">
             {t('portalNavigationModules')}
           </h2>
-          <span className="text-xs text-[var(--text-muted)]">
+          <span className="text-sm text-[var(--text-muted)]">
             {t('clickToOpenSection')}
           </span>
         </div>
@@ -174,15 +174,15 @@ export const Dashboard: React.FC = () => {
                   <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} border flex items-center justify-center mb-3 transition-transform group-hover:scale-110`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-bold text-sm text-[var(--text-primary)] group-hover:text-sky-500 transition-colors">
+                  <h3 className="font-bold text-base text-[var(--text-primary)] group-hover:text-sky-500 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[var(--text-secondary)] mt-1 line-clamp-2 leading-relaxed">
+                  <p className="text-sm text-[var(--text-secondary)] mt-1 line-clamp-2 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-2 flex items-center text-xs font-semibold text-sky-500 group-hover:translate-x-1 transition-transform">
+                <div className="mt-4 pt-2 flex items-center text-sm font-semibold text-sky-500 group-hover:translate-x-1 transition-transform">
                   <span>{t('openSection')}</span>
                   <ChevronRight className="w-4 h-4 ml-0.5" />
                 </div>

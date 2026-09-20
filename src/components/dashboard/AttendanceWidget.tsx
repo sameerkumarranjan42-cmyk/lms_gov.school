@@ -42,7 +42,7 @@ export const AttendanceWidget: React.FC<AttendanceWidgetProps> = ({ data }) => {
               <h3 className="font-bold text-base text-[var(--text-primary)]">
                 {t('attendanceOverview')}
               </h3>
-              <p className="text-xs text-[var(--text-muted)]">
+              <p className="text-sm text-[var(--text-muted)]">
                 {t('currentTermProgress')}
               </p>
             </div>
@@ -59,7 +59,7 @@ export const AttendanceWidget: React.FC<AttendanceWidgetProps> = ({ data }) => {
             <div className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] tracking-tight">
               {percentage}%
             </div>
-            <div className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mt-1">
+            <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mt-1">
               <TrendingUp className="w-3.5 h-3.5" />
               <span>{t('standing')}</span>
             </div>
@@ -93,11 +93,11 @@ export const AttendanceWidget: React.FC<AttendanceWidgetProps> = ({ data }) => {
       </div>
 
       {/* Class Count & Streak Breakdown */}
-      <div className="mt-4 pt-3 border-t border-[var(--border-color)] flex items-center justify-between text-xs">
+      <div className="mt-4 pt-3 border-t border-[var(--border-color)] flex items-center justify-between text-sm">
         <span className="text-[var(--text-secondary)] font-medium">
           {t('classesAttended')}: <strong className="text-[var(--text-primary)] font-bold">{attended} / {total}</strong>
         </span>
-        <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold text-[11px]">
+        <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
           {streak} {t('dayStreak')}
         </span>
       </div>

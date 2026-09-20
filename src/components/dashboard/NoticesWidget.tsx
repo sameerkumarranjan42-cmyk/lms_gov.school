@@ -39,7 +39,7 @@ export const NoticesWidget: React.FC<NoticesWidgetProps> = ({ notices }) => {
               <h3 className="font-bold text-base text-[var(--text-primary)]">
                 {t('importantNotices')}
               </h3>
-              <p className="text-xs text-[var(--text-muted)]">
+              <p className="text-sm text-[var(--text-muted)]">
                 {t('schoolAnnouncements')}
               </p>
             </div>
@@ -47,7 +47,7 @@ export const NoticesWidget: React.FC<NoticesWidgetProps> = ({ notices }) => {
 
           <button
             onClick={() => navigate('/notices')}
-            className="flex items-center gap-1 text-xs font-semibold text-amber-500 hover:text-amber-600 transition-colors"
+            className="flex items-center gap-1 text-sm font-semibold text-amber-500 hover:text-amber-600 transition-colors"
           >
             <span>{t('viewAllNotices')}</span>
             <ChevronRight className="w-4 h-4" />
@@ -63,21 +63,21 @@ export const NoticesWidget: React.FC<NoticesWidgetProps> = ({ notices }) => {
               className="p-3.5 rounded-xl bg-[var(--bg-main)] border border-transparent hover:border-[var(--border-color)] transition-all cursor-pointer group"
             >
               <div className="flex items-start justify-between gap-2">
-                <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md border ${getPriorityBadge(notice.priority)}`}>
+                <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-md border ${getPriorityBadge(notice.priority)}`}>
                   {notice.category}
                 </span>
 
-                <span className="text-[11px] text-[var(--text-muted)] flex items-center gap-1 shrink-0">
+                <span className="text-sm text-[var(--text-muted)] flex items-center gap-1 shrink-0">
                   <Calendar className="w-3 h-3 text-[var(--text-muted)]" />
                   {notice.date}
                 </span>
               </div>
 
-              <h4 className="font-semibold text-xs sm:text-sm text-[var(--text-primary)] group-hover:text-amber-500 transition-colors mt-2 line-clamp-1">
+              <h4 className="font-semibold text-sm sm:text-base text-[var(--text-primary)] group-hover:text-amber-500 transition-colors mt-2 line-clamp-1">
                 {notice.title}
               </h4>
 
-              <p className="text-xs text-[var(--text-secondary)] line-clamp-2 mt-1 leading-relaxed">
+              <p className="text-sm text-[var(--text-secondary)] line-clamp-2 mt-1 leading-relaxed">
                 {notice.summary}
               </p>
             </div>
@@ -86,14 +86,14 @@ export const NoticesWidget: React.FC<NoticesWidgetProps> = ({ notices }) => {
       </div>
 
       {/* Footer */}
-      <div className="mt-4 pt-3 border-t border-[var(--border-color)] flex items-center justify-between text-xs">
+      <div className="mt-4 pt-3 border-t border-[var(--border-color)] flex items-center justify-between text-sm">
         <span className="text-[var(--text-muted)] flex items-center gap-1">
           <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
           {notices.length} {t('activeAnnouncements')}
         </span>
         <button
           onClick={() => navigate('/notices')}
-          className="text-xs font-semibold text-amber-500 hover:underline"
+          className="text-sm font-semibold text-amber-500 hover:underline"
         >
           {t('openNoticeBoard')} →
         </button>

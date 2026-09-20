@@ -46,13 +46,13 @@ export const AcademicsPage: React.FC = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>{t('backToDashboard')}</span>
         </button>
 
-        <span className="text-xs text-[var(--text-muted)]">
+        <span className="text-sm text-[var(--text-muted)]">
           {subjects.length} Enrolled Subjects
         </span>
       </div>
@@ -68,7 +68,7 @@ export const AcademicsPage: React.FC = () => {
               <h1 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] tracking-tight">
                 {t('academicsCurriculumTitle')}
               </h1>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-0.5">
                 {t('subjectWiseProgress')}
               </p>
             </div>
@@ -83,13 +83,13 @@ export const AcademicsPage: React.FC = () => {
             <div>
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
                     {sub.code}
                   </span>
                   <h3 className="text-lg font-bold text-[var(--text-primary)] mt-1.5">
                     {sub.name}
                   </h3>
-                  <p className="text-xs text-[var(--text-muted)] mt-0.5">
+                  <p className="text-sm text-[var(--text-muted)] mt-0.5">
                     Teacher: {sub.teacher}
                   </p>
                 </div>
@@ -98,7 +98,7 @@ export const AcademicsPage: React.FC = () => {
                   <div className="text-2xl font-black text-[var(--text-primary)]">
                     {sub.progressPercentage}%
                   </div>
-                  <div className="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
+                  <div className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                     Syllabus Covered
                   </div>
                 </div>
@@ -112,21 +112,21 @@ export const AcademicsPage: React.FC = () => {
                 />
               </div>
 
-              <p className="text-xs text-[var(--text-secondary)] mt-3 leading-relaxed">
+              <p className="text-sm text-[var(--text-secondary)] mt-3 leading-relaxed">
                 {sub.description}
               </p>
             </div>
 
             {/* Upcoming Assignment */}
             {sub.upcomingAssignment && (
-              <div className="p-3 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)] text-xs flex items-center justify-between gap-2">
+              <div className="p-3 rounded-xl bg-[var(--bg-main)] border border-[var(--border-color)] text-sm flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2 min-w-0">
                   <BookCheck className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span className="text-[var(--text-primary)] font-medium truncate">
                     {sub.upcomingAssignment}
                   </span>
                 </div>
-                <span className="text-[10px] font-bold text-amber-500 shrink-0">
+                <span className="text-xs font-bold text-amber-500 shrink-0">
                   Active
                 </span>
               </div>
@@ -137,42 +137,42 @@ export const AcademicsPage: React.FC = () => {
 
       {/* Future LMS Modules Placeholder Card */}
       <div className="card-base p-6 bg-[var(--bg-main)] border-dashed border-2 border-[var(--border-color)] space-y-3">
-        <div className="flex items-center gap-2 text-xs font-bold text-emerald-500 uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-sm font-bold text-emerald-500 uppercase tracking-wider">
           <Layers className="w-4 h-4" />
           <span>Future Academic LMS Modules</span>
         </div>
 
-        <h3 className="text-sm font-bold text-[var(--text-primary)]">
+        <h3 className="text-base font-bold text-[var(--text-primary)]">
           LMS Learning Features Framework
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
           <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
-            <div className="font-bold text-xs text-[var(--text-primary)] flex items-center gap-1.5">
+            <div className="font-bold text-sm text-[var(--text-primary)] flex items-center gap-1.5">
               <BookOpen className="w-4 h-4 text-sky-500" />
               Digital Textbooks
             </div>
-            <div className="text-[11px] text-[var(--text-muted)] mt-1">
+            <div className="text-sm text-[var(--text-muted)] mt-1">
               NCERT e-books & chapters
             </div>
           </div>
 
           <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
-            <div className="font-bold text-xs text-[var(--text-primary)] flex items-center gap-1.5">
+            <div className="font-bold text-sm text-[var(--text-primary)] flex items-center gap-1.5">
               <FileText className="w-4 h-4 text-emerald-500" />
               Online Submissions
             </div>
-            <div className="text-[11px] text-[var(--text-muted)] mt-1">
+            <div className="text-sm text-[var(--text-muted)] mt-1">
               Assignment uploads & quizzes
             </div>
           </div>
 
           <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
-            <div className="font-bold text-xs text-[var(--text-primary)] flex items-center gap-1.5">
+            <div className="font-bold text-sm text-[var(--text-primary)] flex items-center gap-1.5">
               <Sparkles className="w-4 h-4 text-amber-500" />
               Progress Analytics
             </div>
-            <div className="text-[11px] text-[var(--text-muted)] mt-1">
+            <div className="text-sm text-[var(--text-muted)] mt-1">
               Subject mastery charts
             </div>
           </div>

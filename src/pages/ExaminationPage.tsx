@@ -43,13 +43,13 @@ export const ExaminationPage: React.FC = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>{t('backToDashboard')}</span>
         </button>
 
-        <span className="text-xs text-[var(--text-muted)]">
+        <span className="text-sm text-[var(--text-muted)]">
           {t('academicSession')}
         </span>
       </div>
@@ -65,7 +65,7 @@ export const ExaminationPage: React.FC = () => {
               <h1 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] tracking-tight">
                 {t('examPortalTitle')}
               </h1>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-0.5">
                 {t('firstTermDatesheet')}
               </p>
             </div>
@@ -79,7 +79,7 @@ export const ExaminationPage: React.FC = () => {
           <h2 className="text-base font-bold text-[var(--text-primary)]">
             First Term Timetable (August 2026)
           </h2>
-          <span className="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-bold border border-orange-500/20">
+          <span className="text-sm px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-bold border border-orange-500/20">
             Official Date Sheet
           </span>
         </div>
@@ -92,15 +92,15 @@ export const ExaminationPage: React.FC = () => {
             >
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-extrabold text-[var(--text-primary)]">
+                  <span className="text-base font-extrabold text-[var(--text-primary)]">
                     {item.subject}
                   </span>
-                  <span className="text-xs font-semibold text-[var(--text-muted)]">
+                  <span className="text-sm font-semibold text-[var(--text-muted)]">
                     ({item.maxMarks} Marks)
                   </span>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[var(--text-secondary)]">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--text-secondary)]">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5 text-orange-500" />
                     <strong>{item.date}</strong>
@@ -117,11 +117,11 @@ export const ExaminationPage: React.FC = () => {
 
                 {/* Syllabus Tags */}
                 <div className="flex flex-wrap items-center gap-1.5 pt-2">
-                  <span className="text-[10px] font-bold uppercase text-[var(--text-muted)]">Syllabus:</span>
+                  <span className="text-xs font-bold uppercase text-[var(--text-muted)]">Syllabus:</span>
                   {item.syllabus.map((syl, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded bg-[var(--bg-card)] border border-[var(--border-color)] text-[10px] text-[var(--text-secondary)]"
+                      className="px-2 py-0.5 rounded bg-[var(--bg-card)] border border-[var(--border-color)] text-xs text-[var(--text-secondary)]"
                     >
                       {syl}
                     </span>
@@ -131,7 +131,7 @@ export const ExaminationPage: React.FC = () => {
 
               <button
                 disabled
-                className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border-color)] cursor-not-allowed shrink-0"
+                className="px-3.5 py-2 rounded-xl text-sm font-semibold bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border-color)] cursor-not-allowed shrink-0"
               >
                 Admit Slip Ready
               </button>
@@ -143,11 +143,11 @@ export const ExaminationPage: React.FC = () => {
       {/* Guidelines & Exam Directives */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="card-base p-6 space-y-3">
-          <div className="flex items-center gap-2 text-sm font-bold text-orange-500">
+          <div className="flex items-center gap-2 text-base font-bold text-orange-500">
             <AlertCircle className="w-4 h-4" />
             <span>Exam Hall Guidelines</span>
           </div>
-          <ul className="text-xs text-[var(--text-secondary)] space-y-2 list-disc list-inside leading-relaxed">
+          <ul className="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside leading-relaxed">
             <li>Students must arrive at the examination hall 15 minutes before exam commencement.</li>
             <li>School ID card and admit slip are mandatory for entering the exam hall.</li>
             <li>Electronic devices, calculators, and unapproved notes are strictly prohibited.</li>
@@ -157,16 +157,16 @@ export const ExaminationPage: React.FC = () => {
 
         {/* Future Reports Placeholder */}
         <div className="card-base p-6 bg-[var(--bg-main)] border-dashed border-2 border-[var(--border-color)] space-y-3">
-          <div className="flex items-center gap-2 text-xs font-bold text-orange-500 uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-sm font-bold text-orange-500 uppercase tracking-wider">
             <Layers className="w-4 h-4" />
             <span>Report Card & Evaluation Module</span>
           </div>
 
-          <h3 className="text-sm font-bold text-[var(--text-primary)]">
+          <h3 className="text-base font-bold text-[var(--text-primary)]">
             Future Grading & Transcripts Architecture
           </h3>
 
-          <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
             This module is structured for seamless integration with report card generation, grade performance analytics, answer sheet re-evaluation requests, and term transcripts.
           </p>
         </div>

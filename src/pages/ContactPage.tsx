@@ -66,13 +66,13 @@ export const ContactPage: React.FC = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Dashboard</span>
         </button>
 
-        <span className="text-xs text-[var(--text-muted)]">
+        <span className="text-sm text-[var(--text-muted)]">
           School Help Desk
         </span>
       </div>
@@ -88,7 +88,7 @@ export const ContactPage: React.FC = () => {
               <h1 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] tracking-tight">
                 Contact & School Help Desk
               </h1>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-0.5">
                 Official Directory, Office Hours & Student Inquiry Submission
               </p>
             </div>
@@ -105,7 +105,7 @@ export const ContactPage: React.FC = () => {
               School Administration Directory
             </h2>
 
-            <div className="space-y-4 text-xs">
+            <div className="space-y-4 text-sm">
               <div className="flex items-start gap-3">
                 <div className="p-2 rounded-xl bg-purple-500/10 text-purple-500 shrink-0 mt-0.5">
                   <Building2 className="w-4 h-4" />
@@ -178,19 +178,19 @@ export const ContactPage: React.FC = () => {
               <h2 className="text-base font-bold text-[var(--text-primary)]">
                 Submit Inquiry / Feedback
               </h2>
-              <p className="text-xs text-[var(--text-muted)] mt-0.5">
+              <p className="text-sm text-[var(--text-muted)] mt-0.5">
                 Frontend prototype form • Sends message to school admin queue
               </p>
             </div>
 
             {feedback && (
-              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold flex items-start gap-2">
+              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-semibold flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
                 <div>{feedback}</div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+            <form onSubmit={handleSubmit} className="space-y-4 text-sm">
               <div>
                 <label className="block font-semibold text-[var(--text-secondary)] mb-1">
                   Student Name
@@ -247,7 +247,7 @@ export const ContactPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3 rounded-xl text-xs font-bold bg-purple-500 text-white hover:bg-purple-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20"
+                className="w-full py-3 rounded-xl text-sm font-bold bg-purple-500 text-white hover:bg-purple-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20"
               >
                 {submitting ? (
                   <span>Submitting...</span>

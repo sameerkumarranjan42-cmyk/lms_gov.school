@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './Header';
 import { NavigationDrawer } from './NavigationDrawer';
+import { MobileBottomNav } from './MobileBottomNav';
 import { apiService } from '../../services/apiService';
 import type { StudentProfile } from '../../types';
 
@@ -35,10 +36,13 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         />
 
         {/* Content Area */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 overflow-x-hidden">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 pb-24 lg:pb-8 min-w-0 overflow-x-hidden">
           {children}
         </main>
       </div>
+
+      {/* Always-visible bottom navigation for mobile - easier than a hidden menu */}
+      <MobileBottomNav onOpenMore={() => setSidebarOpen(true)} />
     </div>
   );
 };
